@@ -10,6 +10,8 @@ Microsoft.EntityFrameworkCore.SqlServer
 Migration  
 Microsoft.EntityFrameworkCore.Tools (command) -- Script-Migration : Generate a sql script from migrations  
 Microsoft.EntityFrameworkCore.Design (API)  
+  Override OnConfiguration  
+  OnModelCreating (Fluent API)  
 Reverse EF (generate codes from DB)  
 scaffold-dbcontext -provider Microsoft.EntityFrameworkCore.SqlSderver -connection "...."  
 
