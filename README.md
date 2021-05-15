@@ -5,7 +5,10 @@ This course will teach you how to use Entity Framework Core 5 to perform data ac
   
 https://bit.ly/EFCore5Start
 
-EF 7.0 
+EF 7.0  
 Microsoft.EntityFrameworkCore.SqlServer
+Migration  
+Microsoft.EntityFrameworkCore.Tools (command)  
+Microsoft.EntityFrameworkCore.Design (API)  
 
 
