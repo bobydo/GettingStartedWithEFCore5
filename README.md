@@ -8,7 +8,7 @@ https://bit.ly/EFCore5Start
 EF 7.0  
 Microsoft.EntityFrameworkCore.SqlServer  
 Migration  
-Microsoft.EntityFrameworkCore.Tools (command)  
+Microsoft.EntityFrameworkCore.Tools (command) -- Script-Migration : Generate a sql script from migrations  
 Microsoft.EntityFrameworkCore.Design (API)  
 
 
