@@ -30,4 +30,8 @@ https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools
     <img src="/image/4JoinExtra.png" width="700"</img> 
 </div>
 Bulk operation from SQL command  
-MERGE [Samurais] USING (......)
+MERGE [Samurais] USING (......)  
+https://github.com/dotnet/efcore/blob/179a2ddaa922fdd123fb58216becdb980ef44999/src/EFCore.SqlServer/Update/Internal/SqlServerModificationCommandBatch.cs#L23  
+private const int MaxParameterCount = 2100;  
+private const int MaxRowCount = 1000;  
+
