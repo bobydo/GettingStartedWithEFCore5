@@ -15,4 +15,6 @@ b) OnModelCreating (Fluent API)
 Reverse EF (generate codes from DB)  
 scaffold-dbcontext -provider Microsoft.EntityFrameworkCore.SqlSderver -connection "...."  
 
-
+<div align="left">
+    <img src="/image/4.png"</img> 
+</div>
