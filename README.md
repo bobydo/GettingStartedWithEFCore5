@@ -37,4 +37,10 @@ private const int MaxRowCount = 1000;
   
 var samurais = _context.Samurais  
                 .Where(s => EF.Functions.Like(s.Name, filter)).ToList();  
+  
+Batch process ：  
+_context.Samurais.AddRange(...)  
+var samurais = _context.Samurais.Skip(1).Take(4).ToList();  
+samurais.ForEach(s=>s.Name += "San");  
+_context.SaveChanges();  
 
