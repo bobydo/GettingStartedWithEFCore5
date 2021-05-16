@@ -13,8 +13,10 @@ Microsoft.EntityFrameworkCore.Design (API)
 a) Override OnConfiguration  
 b) OnModelCreating (Fluent API)  
 Reverse EF (generate codes from DB)  
-scaffold-dbcontext -provider Microsoft.EntityFrameworkCore.SqlSderver -connection "...."  
-
+scaffold-dbcontext -provider Microsoft.EntityFrameworkCore.SqlSderver -connection "...."    
+  
+https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools  
+  
 <div align="left">
     <img src="/image/4.png" width="700"</img> 
 </div>
