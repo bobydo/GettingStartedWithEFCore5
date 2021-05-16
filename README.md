@@ -21,3 +21,6 @@ scaffold-dbcontext -provider Microsoft.EntityFrameworkCore.SqlSderver -connectio
 <div align="left">
     <img src="/image/4ManyToMany.png" width="700"</img> 
 </div>
+<div align="left">
+    <img src="/image/4JoinTable.png" width="700"</img> 
+</div>
