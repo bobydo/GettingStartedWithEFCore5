@@ -47,4 +47,14 @@ _context.SaveChanges();
 <div align="left">
     <img src="/image/5NoTrack.png" width="700"</img> 
 </div>
-5NoTrack.png
+  
+var samurai = _context.Samurais.Include(s => s.Quotes)  
+.FirstOrDefault(s => s.Id == 2);  
+var quote=samurai.Quotes[0];  
+quote.Text += "Did you hear that again?";  
+  
+using var newContext=new SamuraiContext();  
+//Following code will cause issue to update disconnected dbcontext  
+//newContext.Quotes.Update(quote);  
+newContext.Entry(quote).State = EntityState.Modified;  
+newContext.SaveChanges();  
