@@ -45,6 +45,6 @@ samurais.ForEach(s=>s.Name += "San");
 _context.SaveChanges();  
   
 <div align="left">
-    <img src="/image/5NoTRack.png" width="700"</img> 
+    <img src="/image/5NoTrack.png" width="700"</img> 
 </div>
 5NoTrack.png
