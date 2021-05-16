@@ -29,3 +29,5 @@ https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools
 <div align="left">
     <img src="/image/4JoinExtra.png" width="700"</img> 
 </div>
+Bulk operation from SQL command  
+MERGE [Samurais] USING (......)
