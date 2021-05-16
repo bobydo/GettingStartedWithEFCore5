@@ -33,5 +33,8 @@ Bulk operation from SQL command
 MERGE [Samurais] USING (......)  
 https://github.com/dotnet/efcore/blob/179a2ddaa922fdd123fb58216becdb980ef44999/src/EFCore.SqlServer/Update/Internal/SqlServerModificationCommandBatch.cs#L23  
 private const int MaxParameterCount = 2100;  
-private const int MaxRowCount = 1000;  
+private const int MaxRowCount = 1000; 
+  
+var samurais = _context.Samurais  
+                .Where(s => EF.Functions.Like(s.Name, filter)).ToList();  
 
