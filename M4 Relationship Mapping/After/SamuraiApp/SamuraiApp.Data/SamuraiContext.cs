@@ -9,9 +9,11 @@ namespace SamuraiApp.Data
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<Battle> Battles { get; set; }
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            //https://docs.microsoft.com/en-us/ef/ef6/querying/related-data?redirectedfrom=MSDN
+            //https://www.entityframeworktutorial.net/lazyloading-in-entity-framework.aspx
+            //https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools
             optionsBuilder.UseSqlServer(
                 "Data Source= (localdb)\\MSSQLLocalDB; Initial Catalog=SamuraiAppData");
 
@@ -26,6 +28,10 @@ namespace SamuraiApp.Data
                   bs => bs.HasOne<Samurai>().WithMany())
                 .Property(bs => bs.DateJoined)
                 .HasDefaultValueSql("getdate()");
+
+            //composite key
+            //modelBuilder.Entity<CourseAssignment>()
+            //    .HasKey(c => new { c.CourseID, c.InstructorID });
 
         }
     }
