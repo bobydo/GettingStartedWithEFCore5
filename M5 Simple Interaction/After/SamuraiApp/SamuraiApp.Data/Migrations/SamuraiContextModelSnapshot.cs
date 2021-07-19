@@ -17,7 +17,7 @@ namespace SamuraiApp.Data.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0-rtm.20509.3");
+                .HasAnnotation("ProductVersion", "5.0.0");
 
             modelBuilder.Entity("SamuraiApp.Domain.Battle", b =>
                 {

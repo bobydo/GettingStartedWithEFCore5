@@ -14,7 +14,7 @@ namespace SamuraiApp.UI
 
         private static void Main(string[] args)
         {
-            AddSamuraisByName("Shimada", "Okamoto", "Kikuchio", "Hayashida");
+            //AddSamuraisByName("Shimada", "Okamoto", "Kikuchio", "Hayashida");
             //GetSamurais();
             //AddVariousTypes();
             //QueryFilters();
@@ -23,7 +23,7 @@ namespace SamuraiApp.UI
             //RetrieveAndUpdateMultipleSamurais();
             //MultipleDatabaseOperations();
             //RetrieveAndDeleteASamurai();
-            //QueryAndUpdateBattles_Disconnected();
+            QueryAndUpdateBattles_Disconnected();
         }
 
         private static void AddVariousTypes()

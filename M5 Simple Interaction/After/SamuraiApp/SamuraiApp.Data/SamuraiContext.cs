@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SamuraiApp.Domain;
 using System;
+using System.Diagnostics;
 
 namespace SamuraiApp.Data
 {
@@ -14,10 +15,12 @@ namespace SamuraiApp.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "Data Source= (localdb)\\MSSQLLocalDB; Initial Catalog=SamuraiAppData")
-                .LogTo(Console.WriteLine,new[] { DbLoggerCategory.Database.Command.Name },
+                "Data Source=localhost;Initial Catalog=SamuraiAppData;Integrated Security=True",
+                options=>options.MaxBatchSize(100))//call merge join; default is 2100
+                .LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name },
                        LogLevel.Information)
-                .EnableSensitiveDataLogging();
+                //.LogTo(log => Debug.WriteLine(log));
+                .EnableSensitiveDataLogging();// could check parameters
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
