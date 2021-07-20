@@ -14,11 +14,11 @@ namespace SamuraiApp.UI
 
         private static void Main(string[] args)
         {
-            // InsertNewSamuraiWithAQuote();
+            //InsertNewSamuraiWithAQuote();
             //InsertNewSamuraiWithManyQuotes();
             //AddQuoteToExistingSamuraiWhileTracked();
-            //AddQuoteToExistingSamuraiNotTracked(2);
-            //Simpler_AddQuoteToExistingSamuraiNotTracked(2);
+            //AddQuoteToExistingSamuraiNotTracked(1);
+            //Simpler_AddQuoteToExistingSamuraiNotTracked(1);
             //EagerLoadSamuraiWithQuotes();
             //ProjectSomeProperties();
             //ProjectSamuraisWithQuotes();
@@ -35,9 +35,10 @@ namespace SamuraiApp.UI
             //RemoveSamuraiFromABattleExplicit();
             //AddNewSamuraiWithHorse();
             //AddNewHorseToSamuraiUsingId();
+            //WillNotRemoveSamuraiFromABattle();
             //AddNewHorseToSamuraiObject();
             //AddNewHorseToDisconnectedSamuraiObject();
-            ReplaceAHorse();
+            //ReplaceAHorse();
         }
 
         private static void InsertNewSamuraiWithAQuote()
@@ -46,9 +47,9 @@ namespace SamuraiApp.UI
             {
                 Name = "Kambei Shimada",
                 Quotes = new List<Quote>
-        {
-          new Quote { Text = "I've come to save you" }
-        }
+                {
+                  new Quote { Text = "I've come to save you" }
+                }
             };
             _context.Samurais.Add(samurai);
             _context.SaveChanges();
@@ -58,10 +59,11 @@ namespace SamuraiApp.UI
             var samurai = new Samurai
             {
                 Name = "Kyūzō",
+                //quotes go to batch insertion
                 Quotes = new List<Quote> {
-            new Quote {Text = "Watch out for my sharp sword!"},
-            new Quote {Text="I told you to watch out for the sharp sword! Oh well!" }
-        }
+                    new Quote {Text = "Watch out for my sharp sword!"},
+                    new Quote {Text="I told you to watch out for the sharp sword! Oh well!" }
+                }
             };
             _context.Samurais.Add(samurai);
             _context.SaveChanges();
@@ -85,6 +87,8 @@ namespace SamuraiApp.UI
             using (var newContext = new SamuraiContext())
             {
                 newContext.Samurais.Attach(samurai);
+                //extra query to udpate samurai
+                //newContext.Samurais.Update(samurai);
                 newContext.SaveChanges();
             }
         }
@@ -180,7 +184,15 @@ namespace SamuraiApp.UI
         }
         private static void AddingNewSamuraiToAnExistingBattle()
         {
-             var battle = _context.Battles.FirstOrDefault();
+            Battle newBatttle = new Battle()
+            {
+                Name = "battle1",
+                StartDate = DateTime.Now.AddDays(-30),
+                EndDate = DateTime.Now.AddDays(-0)
+            };
+            _context.Battles.Add(newBatttle);
+            _context.SaveChanges();
+            var battle = _context.Battles.FirstOrDefault();
             battle.Samurais.Add(new Samurai { Name = "Takeda Shingen" });
             _context.SaveChanges();
         }    
@@ -214,7 +226,7 @@ namespace SamuraiApp.UI
         private static void WillNotRemoveSamuraiFromABattle()
         {
             var battle = _context.Battles.Find(1);
-            var samurai = _context.Samurais.Find(12);
+            var samurai = _context.Samurais.Find(2);
             battle.Samurais.Remove(samurai);
             _context.SaveChanges(); //the relationship is not being tracked
         }
@@ -238,6 +250,7 @@ namespace SamuraiApp.UI
         }
         private static void AddNewHorseToSamuraiUsingId()
         {
+            //var horse = new Horse { Name = "Scout", SamuraiId = 3 };
             var horse = new Horse { Name = "Scout", SamuraiId = 2 };
             _context.Add(horse);
             _context.SaveChanges();

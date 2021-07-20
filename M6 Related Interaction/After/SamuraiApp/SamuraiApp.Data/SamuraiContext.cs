@@ -14,7 +14,7 @@ namespace SamuraiApp.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "Data Source= (localdb)\\MSSQLLocalDB; Initial Catalog=SamuraiAppData")
+                "Data Source=localhost;Initial Catalog=SamuraiAppData;Integrated Security=True")
                 .LogTo(Console.WriteLine,new[] { DbLoggerCategory.Database.Command.Name//,
                                                  //DbLoggerCategory.Database.Transaction.Name
                                                },
